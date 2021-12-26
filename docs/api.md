@@ -174,3 +174,11 @@ Represents a user's detail that's mainly use in listing and wiki.
 | - username | string  | Username of request user.                 |
 | - email    | string  | Email of request user. (Can be blank)     |
 | image      | string  | The URL of the user's profile image.      |
+
+----------------------------------------------------------------------------------------------------
+
+Thanks for Netlify to sponsors us the open source plan!
+
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
+</a>
