@@ -4,7 +4,7 @@ Welcome to the documentation of Rūrusetto API. You can get the information abou
 
 # Warning
 
-This API is still in development. It may change without notice. You can check the breaking changes in the [breaking changes](api-breaking-changes.md).
+This API is still in development. It may change without notice. You can check the breaking changes in the [changelog and breaking changes](api-change-and-breaking-changes.md).
 
 # Terms of Use
 
@@ -36,27 +36,30 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 
 ### Response format
 
-| Name         | Type        | Description                                                                   |
-|--------------|-------------|-------------------------------------------------------------------------------|
-| id           | integer     | The ID of the ruleset in Rūrusetto database.                                  |
-| name         | string      | The name of the ruleset.                                                      |
-| slug         | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.           |
-| description  | string      | The short description of the rulesets.                                        |
-| icon         | string      | The URL of the ruleset icon that use in website's default theme (dark theme). |
-| light_icon   | string      | The URL of the ruleset icon that use in website's light theme.                |
-| owner_detail | user_detail | The [user_detail](#user_detail) of the ruleset's current owner                |
+| Name                 | Type        | Description                                                                                                                                                     |
+|----------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                   | integer     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
+| name                 | string      | The name of the ruleset.                                                                                                                                        |
+| slug                 | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
+| description          | string      | The short description of the rulesets.                                                                                                                          |
+| icon                 | string      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
+| light_icon           | string      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
+| owner_detail         | user_detail | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
+| verified             | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
+| direct_download_link | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| can_download         | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
 
 ### Example response (200)
 
 ```json
 [
     {
-        "id": 3,
+        "id": 1,
         "name": "Sentakki",
         "slug": "sentakki",
-        "description": "A custom ruleset based on Sega's arcade rhythm game maimai",
-        "icon": "/media/default_icon.png",
-        "light_icon": "/media/default_icon.png",
+        "description": "TAP, HOLD and SLIDE to the beat",
+        "icon": "/media/rulesets_icon/lol_icon.png",
+        "light_icon": "/media/rulesets_icon/lol_icon.png",
         "owner_detail": {
             "id": 3,
             "user": {
@@ -64,7 +67,10 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
                 "email": "bloom@727mail.com"
             },
             "image": "/media/default.jpeg"
-        }
+        },
+        "verified": true,
+        "direct_download_link": "https://github.com/LumpBloom7/sentakki/releases/latest/download/osu.Game.Rulesets.Sentakki.dll",
+        "can_download": true
     }, {...}, {...}
 ]
 ```
@@ -77,29 +83,31 @@ Get the full details of a request ruleset.
 
 ### Response format
 
-| Name                     | Type        | Description                                                                                    |
-|--------------------------|-------------|------------------------------------------------------------------------------------------------|
-| id                       | integer     | The ID of the ruleset in Rūrusetto database.                                                   |
-| name                     | string      | The name of the ruleset.                                                                       |
-| slug                     | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                            |
-| description              | string      | The short description of the rulesets.                                                         |
-| icon                     | string      | The URL of the ruleset icon that use in website's default theme (dark theme).                  |
-| light_icon               | string      | The URL of the ruleset icon that use in website's light theme.                                 |
-| logo                     | string      | The URL of the ruleset logo that use in the infobox.                                           |
-| cover_image              | string      | The URL of the cover image in ruleset's wiki page in website's default theme (dark theme).     |
-| cover_image_light        | string      | The URL of the cover image in ruleset's wiki page in website's light theme.                    |
-| opengraph_image          | string      | The URL of the image that use in the opengraph part of the wiki URL.                           |
-| custom_css               | string      | The URL of the CSS file that's override the website's default styling.                         |
-| content                  | string      | Wiki main content in markdown format.                                                          |
-| source                   | string      | The URL source of the rulesets.                                                                |
-| github_download_filename | string      | Filename that use in rendering the direct download link with the source link.                  |
-| creator_detail           | user_detail | The [user_detail](#user_detail) of the user who create this wiki page, not the owner.          |
-| created_at               | string      | The UTC time that the wiki page has create in JSON time format.                                |
-| owner_detail             | user_detail | The [user_detail](#user_detail) of the ruleset's current owner                                 |
-| last_edited_at           | string      | The UTC time of the latest wiki edit.                                                          |
-| last_edited_by_detail    | user_detail | The [user_detail](#user_detail) of the user who edit the wiki page last time.                  |
-| verified                 | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset. |
-| archive                  | boolean     | True if this ruleset is stop update or archived by rulesets creator.                           |
+| Name                     | Type        | Description                                                                                                                                                     |
+|--------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                       | integer     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
+| name                     | string      | The name of the ruleset.                                                                                                                                        |
+| slug                     | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
+| description              | string      | The short description of the rulesets.                                                                                                                          |
+| icon                     | string      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
+| light_icon               | string      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
+| logo                     | string      | The URL of the ruleset logo that use in the infobox.                                                                                                            |
+| cover_image              | string      | The URL of the cover image in ruleset's wiki page in website's default theme (dark theme).                                                                      |
+| cover_image_light        | string      | The URL of the cover image in ruleset's wiki page in website's light theme.                                                                                     |
+| opengraph_image          | string      | The URL of the image that use in the opengraph part of the wiki URL.                                                                                            |
+| custom_css               | string      | The URL of the CSS file that's override the website's default styling.                                                                                          |
+| content                  | string      | Wiki main content in markdown format.                                                                                                                           |
+| source                   | string      | The URL source of the rulesets.                                                                                                                                 |
+| github_download_filename | string      | Filename that use in rendering the direct download link with the source link.                                                                                   |
+| direct_download_link     | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| can_download             | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
+| creator_detail           | user_detail | The [user_detail](#user_detail) of the user who create this wiki page, not the owner.                                                                           |
+| created_at               | string      | The UTC time that the wiki page has create in JSON time format.                                                                                                 |
+| owner_detail             | user_detail | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
+| last_edited_at           | string      | The UTC time of the latest wiki edit.                                                                                                                           |
+| last_edited_by_detail    | user_detail | The [user_detail](#user_detail) of the user who edit the wiki page last time.                                                                                   |
+| verified                 | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
+| archive                  | boolean     | True if this ruleset is stop update or archived by rulesets creator.                                                                                            |
 
 
 ### Example response (200)
@@ -120,6 +128,8 @@ Get the full details of a request ruleset.
   "content": "![Logo](https://rulesets.info/media/rulesets_logo/LOL_logo.png)\r\n\r\nWelcome to the sentakki wiki!\r\n\r\nThank you for showing interest in sentakki.\r\n\r\nSentakki is a custom osu!lazer ruleset based on Sega's maimai. \r\n\r\nRefer to the subpages for instructions to install the ruleset and learn about the various note types.",
   "source": "https://github.com/LumpBloom7/sentakki",
   "github_download_filename": "osu.Game.Rulesets.Sentakki.dll",
+  "direct_download_link": "https://github.com/LumpBloom7/sentakki/releases/latest/download/osu.Game.Rulesets.Sentakki.dll",
+  "can_download": true,
   "creator_detail": {
     "id": 4,
     "user": {
