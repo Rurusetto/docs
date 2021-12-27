@@ -1,6 +1,6 @@
 - [Home](/)
 - [API Documentation](api.md)
-  - [Breaking Changes](api-breaking-changes.md)
+  - [Changelog and Breaking Changes](api-change-and-breaking-changes.md)
   - [Endpoints](api.md#endpoints)
     - [Base URL](api.md#base-url)
     - [Files](api.md#files)
