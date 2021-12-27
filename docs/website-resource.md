@@ -2,7 +2,7 @@
 
 We also provide the API about the resource that use in the website. You can follow the table below to get the resource via API.
 
-## Endpoint
+## Endpoints
 
 The endpoint of the resource is different from the other part. The endpoint is `https://rulesets.info/static/`
 
@@ -15,7 +15,7 @@ The endpoint of the resource is different from the other part. The endpoint is `
 | `/logo/rurusetto-logo-with-name.svg` | ![rurusetto-logo-with-name.svg](https://rulesets.info/static/logo/rurusetto-logo-with-name.svg) | Rūrusetto logo with name                                                               |
 | `/logo/rurusetto-logo.svg`           | ![rurusetto-logo.svg](https://rulesets.info/static/logo/rurusetto-logo.svg)                     | Normal Rūrusetto logo with gradient pink color that's the signature color of Rūrusetto |
 
-## Image resource
+## Images
 
 | Link                              | Preview                                                                                    | Description                                                          |
 |-----------------------------------|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------|

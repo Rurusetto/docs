@@ -10,3 +10,7 @@
     - [Details](api.md#details)
   - [Object Structure](api.md#object-structure)
     - [user_detail](api.md#user_detail)
+  - [Website Resource](website-resource.md)
+    - [Endpoints](website-resource.md#endpoints)
+    - [Logo](website-resource.md#logo)
+    - [Images](website-resource.md#images)
