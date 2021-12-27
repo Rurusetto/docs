@@ -29,3 +29,11 @@ The endpoint of the resource is different from the other part. The endpoint is `
 | `/img/install-cover-light.png`    | ![install-cover-light.png](https://rulesets.info/static/img/install-cover-light.png)       | The cover image of the install page in light theme.                  |
 | `/img/changelog-cover-night2.png` | ![changelog-cover-night2.png](https://rulesets.info/static/img/changelog-cover-night2.png) | The cover image of the changelog page in default theme (Dark theme). |
 | `/img/changelog-cover-light3.png` | ![changelog-cover-light3.png](https://rulesets.info/static/img/changelog-cover-light3.png) | The cover image of the changelog page in light theme.                |
+
+----------------------------------------------------------------------------------------------------
+
+Thanks for Netlify to sponsors us the open source plan!
+
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
+</a>
