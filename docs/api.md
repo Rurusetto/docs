@@ -48,6 +48,7 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 | verified             | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
 | direct_download_link | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
 | can_download         | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
+| status               | status      | The [status](#status) of the ruleset.                                                                                                                           |
 
 ### Example response (200)
 
@@ -55,22 +56,30 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 [
     {
         "id": 1,
-        "name": "Sentakki",
+        "name": "sentakki",
         "slug": "sentakki",
         "description": "TAP, HOLD and SLIDE to the beat",
         "icon": "/media/rulesets_icon/lol_icon.png",
-        "light_icon": "/media/rulesets_icon/lol_icon.png",
+        "light_icon": "/media/rulesets_icon_light/lol_icon.png",
         "owner_detail": {
-            "id": 3,
+            "id": 4,
             "user": {
                 "username": "Bloom",
-                "email": "bloom@727mail.com"
+                "email": ""
             },
-            "image": "/media/default.jpeg"
+            "image": "/media/profile_pics/Very_not_so_pink_avatar_trnsprncy.png"
         },
         "verified": true,
         "direct_download_link": "https://github.com/LumpBloom7/sentakki/releases/latest/download/osu.Game.Rulesets.Sentakki.dll",
-        "can_download": true
+        "can_download": true,
+        "status": {
+            "latest_version": "2021.1127.0",
+            "latest_update": "2021-11-27T10:41:54Z",
+            "pre_release": false,
+            "changelog": "Thank you for showing interest in this ruleset. This is a tagged release (2021.1127.0).\r\nIf you like this ruleset, do consider [supporting me](https://lumpbloom7.github.io/sponsor).\r\n\r\n**This release resolves a minor SR incompatibility that could occur on the `2021.1127.0` release of osu!lazer**\r\n\r\n## What's Changed\r\n* Bump ppy.osu.Game from 2021.1120.0 to 2021.1127.0 by @dependabot in https://github.com/LumpBloom7/sentakki/pull/286\r\n\r\n\r\n**Full Changelog**: https://github.com/LumpBloom7/sentakki/compare/2021.1120.0...2021.1127.0\r\n\r\n## Feedback\r\nComplaints? Suggestion? Or just want to discuss stuff?\r\n\r\nFeel free to join the [sentakki discord](https://discord.gg/CQPNADu) for a direct communication line to devs, and exclusive access to insider test builds.\r\n\r\n## Installation\r\n[Refer to this wiki page](https://github.com/LumpBloom7/sentakki/wiki/Ruleset-installation-guide)",
+            "file_size": 927744,
+            "playable": "yes"
+        }
     }, {...}, {...}
 ]
 ```
@@ -173,7 +182,7 @@ Get the full details of a request ruleset.
 
 ## user_detail
 
-Represents a user's detail that's mainly use in listing and wiki.
+Represents a user's detail that's mainly use in listing and wiki. Will return `{}` if the user is not found or mark as unknown in database.
 
 ### Response format
 
@@ -185,6 +194,20 @@ Represents a user's detail that's mainly use in listing and wiki.
 | - email    | string  | Email of request user. (Can be blank)     |
 | image      | string  | The URL of the user's profile image.      |
 
+## status
+
+Use in some element that required to show the status of the ruleset.
+
+### Response format
+
+| Name           | Type    | Description                                                                    |
+|----------------|---------|--------------------------------------------------------------------------------|
+| latest_version | string  | The latest version name of the ruleset.                                        |
+| latest_update  | string  | The time on ruleset's latest update in JSON time format.                       |
+| pre_realase    | boolean | True if the ruleset is marked as pre-release in GitHub Release.                |
+| change_log     | string  | The latest changelog of the ruleset in markdown format.                        |
+| file_size      | int     | The size of the latest release file in bytes.                                  |
+| playable       | string  | The status about the playable of the ruleset. Has 3 choices (yes, no, unknown) |
 
 # Website resource
 
