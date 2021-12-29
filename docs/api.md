@@ -323,7 +323,7 @@ Get full detail on the profile page of the target user. Will return 404 if the u
 
 | Name         | Type    | Description                                                              |
 |--------------|---------|--------------------------------------------------------------------------|
-| id           | integer | The ID of the user. Use                                                  |
+| id           | integer | The ID of the user. Use in URL path to target user's profile page.       |
 | user         |         |                                                                          |
 | - username   | string  | Username of request user.                                                |
 | - email      | string  | Email of request user. (Can be blank)                                    |
