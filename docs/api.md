@@ -88,7 +88,7 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 
 Get the full details of a request ruleset.
 
-    GET https://rulesets.info/api/subpage/{ruleset-slug}
+    GET https://rulesets.info/api/rulesets/{ruleset-slug}
 
 ### Response format
 
