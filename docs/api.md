@@ -240,7 +240,6 @@ Get full detail of targeted subpage. Will return 404 status if subpage or rulese
 | last_edited_at        | string      | The UTC time of the latest wiki edit in JSON time format.         |
 | created_at            | string      | The UTC time that the wiki page has create in JSON time format.   |
 
-
 ### Example response (200)
 
 ```json
@@ -312,6 +311,54 @@ Get full detail of targeted subpage. Will return 404 status if subpage or rulese
 }
 ```
 
+# Profile
+
+## Profile page
+
+Get full detail on the profile page of the target user. Will return 404 if the user is not found.
+
+    GET https://rulesets.info/api/profile/{user-id}/
+
+### Response format
+
+| Name         | Type    | Description                                                              |
+|--------------|---------|--------------------------------------------------------------------------|
+| id           | integer | The ID of the user. Use                                                  |
+| user         |         |                                                                          |
+| - username   | string  | Username of request user.                                                |
+| - email      | string  | Email of request user. (Can be blank)                                    |
+| image        | string  | URL of the user's profile picture.                                       |
+| cover        | string  | URL of the user's cover picture in website's default theme (Dark theme). |
+| cover_light  | string  | URL of the user's cover picture in website's light theme.                |
+| about_me     | string  | User's introduction text on profile page.                                |
+| osu_username | string  | osu! account username of target user (Can be blank)                      |
+
+
+### Example response (200)
+
+```json
+{
+  "id": 1,
+  "user": {
+    "username": "HelloYeew",
+    "email": "me@helloyeew.dev"
+  },
+  "image": "/media/profile_pics/1612258077.jpeg",
+  "cover": "/media/cover_pics/finale.png",
+  "cover_light": "/media/cover_pics_light/785636.png",
+  "about_me": "Hello there!",
+  "osu_username": "HelloYeew"
+}
+```
+
+### Example response (404)
+
+```json
+{
+  "detail": "The user is not found"
+}
+```
+
 # Object Structure
 
 ## user_detail
@@ -334,14 +381,14 @@ Use in some element that required to show the status of the ruleset.
 
 ### Response format
 
-| Name           | Type    | Description                                                                    |
-|----------------|---------|--------------------------------------------------------------------------------|
-| latest_version | string  | The latest version name of the ruleset.                                        |
-| latest_update  | string  | The time on ruleset's latest update in JSON time format.                       |
-| pre_realase    | boolean | True if the ruleset is marked as pre-release in GitHub Release.                |
-| change_log     | string  | The latest changelog of the ruleset in markdown format.                        |
-| file_size      | int     | The size of the latest release file in bytes.                                  |
-| playable       | string  | The status about the playable of the ruleset. Has 3 choices (yes, no, unknown) |
+| Name           | Type    | Description                                                                                      |
+|----------------|---------|--------------------------------------------------------------------------------------------------|
+| latest_version | string  | The latest version name of the ruleset.                                                          |
+| latest_update  | string  | The time on ruleset's latest update in JSON time format. If it's blank it will return as `null`. |
+| pre_release    | boolean | True if the ruleset is marked as pre-release in GitHub Release.                                  |
+| changelog      | string  | The latest changelog of the ruleset in markdown format.                                          |
+| file_size      | int     | The size of the latest release file in bytes.                                                    |
+| playable       | string  | The status about the playable of the ruleset. Has 3 choices (yes, no, unknown)                   |
 
 # Website resource
 
