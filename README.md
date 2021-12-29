@@ -5,7 +5,7 @@
 
 The documentation for rūrusetto API and other
 
-# Developing Rūrusetto Documentation
+## Developing Rūrusetto Documentation
 
 Please make sure you have the following prerequisites:
 
@@ -13,7 +13,7 @@ Please make sure you have the following prerequisites:
 - Markdown editor (We recommend [Visual Studio Code](https://code.visualstudio.com/))
 - Git
 
-## Downloading the documentation
+### Downloading the documentation
 
 Clone the repository:
 
@@ -28,7 +28,7 @@ To update the source code to the latest commit, run the following command inside
 git pull
 ```
 
-## Install Docsify
+### Install Docsify
 
 It is recommended to install docsify-cli globally, which helps initializing and previewing the website locally.
 
@@ -36,11 +36,11 @@ It is recommended to install docsify-cli globally, which helps initializing and 
 npm i docsify-cli -g
 ```
 
-## Edit the documentation
+### Edit the documentation
 
 The documentation is written in Markdown format and place in the `docs` directory. All documentation file are there.
 
-## Preview the documentation
+### Preview the documentation
 
 Use the following command inside the main folder (not in `docs`):
 
@@ -48,11 +48,11 @@ Use the following command inside the main folder (not in `docs`):
 docsify serve docs
 ```
 
-# More Information
+## More Information
 
 Visit [Docsify](https://docsify.js.org/) documentation for more information.
 
-# Contributing
+## Contributing
 
 We use [code of conduct](CODE_OF_CONDUCT.md) from `Contributor Covenant`.
 
