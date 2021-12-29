@@ -317,7 +317,7 @@ Get full detail of targeted subpage. Will return 404 status if subpage or rulese
 
 Get full detail on the profile page of the target user. Will return 404 if the user is not found.
 
-    GET https://rulesets.info/api/profile/{user-id}/
+    GET https://rulesets.info/api/profile/{user-id}
 
 ### Response format
 
