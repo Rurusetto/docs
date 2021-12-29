@@ -189,7 +189,7 @@ Get the full details of a request ruleset.
 
 # Subpage
 
-## Ruleset subpage
+## Ruleset Subpage
 
 Get list of subpage of a ruleset. Will return `[]` if there is no subpage in ruleset and will return 404 status if ruleset is not found.
 
@@ -221,7 +221,7 @@ Get list of subpage of a ruleset. Will return `[]` if there is no subpage in rul
 }
 ```
 
-## Subpage detail
+## Subpage Detail
 
 Get full detail of targeted subpage. Will return 404 status if subpage or ruleset is not found.
 
@@ -313,7 +313,7 @@ Get full detail of targeted subpage. Will return 404 status if subpage or rulese
 
 # Profile
 
-## Profile page
+## Profile Page
 
 Get full detail on the profile page of the target user. Will return 404 if the user is not found.
 
