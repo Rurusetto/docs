@@ -10,7 +10,7 @@
     - [Details](api.md#details)
   - [Subpage](api.md#subpage)
     - [Ruleset Subpage](api.md#ruleset-subpage)
-    - [Subpage Detail](api.md#details)
+    - [Subpage Detail](api.md#subpage-detail)
   - [Profile](api.md#profile)
     - [Profile Page](api.md#profile-page)
   - [Object Structure](api.md#object-structure)
