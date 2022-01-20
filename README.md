@@ -54,6 +54,8 @@ Visit [Docsify](https://docsify.js.org/) documentation for more information.
 
 ## Contributing
 
+If you see any typo or something wrong with the documentation, please make a new issue on the repository or you can make this more clear by creating a pull request and we will fix or review it as soon as possible.
+
 We use [code of conduct](CODE_OF_CONDUCT.md) from `Contributor Covenant`.
 
 ## License
