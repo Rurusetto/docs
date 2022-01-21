@@ -359,7 +359,7 @@ Get full detail on the profile page of the target user. Will return 404 if the u
 }
 ```
 
-# Object Structure
+# Objects Structure
 
 ## user_detail
 
