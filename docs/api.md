@@ -321,17 +321,17 @@ Get full detail on the profile page of the target user. Will return 404 if the u
 
 ### Response format
 
-| Name         | Type    | Description                                                              |
-|--------------|---------|--------------------------------------------------------------------------|
-| id           | integer | The ID of the user. Use in URL path to target user's profile page.       |
-| user         |         |                                                                          |
-| - username   | string  | Username of request user.                                                |
-| - email      | string  | Email of request user. (Can be blank)                                    |
-| image        | string  | URL of the user's profile picture.                                       |
-| cover        | string  | URL of the user's cover picture in website's default theme (Dark theme). |
-| cover_light  | string  | URL of the user's cover picture in website's light theme.                |
-| about_me     | string  | User's introduction text on profile page.                                |
-| osu_username | string  | osu! account username of target user (Can be blank)                      |
+| Name         | Type    | Description                                                                                           |
+|--------------|---------|-------------------------------------------------------------------------------------------------------|
+| id           | integer | The ID of the user. Use in URL path to target user's profile page.                                    |
+| user         |         |                                                                                                       |
+| - username   | string  | Username of request user.                                                                             |
+| - email      | string  | Email of request user. (Can be blank and if it's blank this field will be "", not null)               |
+| image        | string  | URL of the user's profile picture.                                                                    |
+| cover        | string  | URL of the user's cover picture in website's default theme (Dark theme).                              |
+| cover_light  | string  | URL of the user's cover picture in website's light theme.                                             |
+| about_me     | string  | User's introduction text on profile page.                                                             |
+| osu_username | string  | osu! account username of target user (Can be blank and if it's blank this field will be "", not null) |
 
 
 ### Example response (200)
@@ -367,13 +367,13 @@ Represents a user's detail that's mainly use in listing and wiki. Will return `{
 
 ### Response format
 
-| Name       | Type    | Description                               |
-|------------|---------|-------------------------------------------|
-| id         | integer | The ID of the user in Rūrusetto database. |
-| user       |         |                                           |
-| - username | string  | Username of request user.                 |
-| - email    | string  | Email of request user. (Can be blank)     |
-| image      | string  | The URL of the user's profile image.      |
+| Name       | Type    | Description                                                                             |
+|------------|---------|-----------------------------------------------------------------------------------------|
+| id         | integer | The ID of the user in Rūrusetto database.                                               |
+| user       |         |                                                                                         |
+| - username | string  | Username of request user.                                                               |
+| - email    | string  | Email of request user. (Can be blank and if it's blank this field will be "", not null) |
+| image      | string  | The URL of the user's profile image.                                                    |
 
 ## status
 
