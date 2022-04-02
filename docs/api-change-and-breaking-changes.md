@@ -12,7 +12,7 @@
 
 ## April 2, 2022 (2022.402.0)
 
-- Add `parameter` to Rulesets API.
+- Add `archive` parameter to Rulesets API.
 
 # Breaking Changes
 
