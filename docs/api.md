@@ -4,13 +4,17 @@ Welcome to the documentation of Rūrusetto API. You can get the information abou
 
 # Warning
 
-This API is still in development. It may change without notice. You can check the breaking changes in the [changelog and breaking changes](api-change-and-breaking-changes.md).
+We cannot notice you on the breaking change, but you can track or check the breaking changes by
+- Turn on notification on [the site's main repositories](https://github.com/Rurusetto/rurusetto) for notice the breaking change in [our release note](https://github.com/Rurusetto/rurusetto/releases)
+- Check on [changelog and breaking changes](api-change-and-breaking-changes.md) for breaking change history.
 
 # Terms of Use
 
 This API is not required key. You can use it without any restrictions. Just don't abuse it.
 
 Current limit rate is set at an insane rate of 1200 requests per minutes. If you use more than that, you should be idiot.
+
+If you use this API and want to share on your beautiful project that use this API, want to request on feature or worry on permission to use this API you can [send an email to me](mailto:me@helloyeew.dev) or just make an issues or discussion on [the repositories](https://github.com/Rurusetto/rurusetto)
 
 # Endpoints
 
