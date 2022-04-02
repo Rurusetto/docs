@@ -14,7 +14,13 @@ This API is not required key. You can use it without any restrictions. Just don'
 
 Current limit rate is set at an insane rate of 1200 requests per minutes. If you use more than that, you should be idiot.
 
+## Message from [HelloYeew](https://github.com/HelloYeew), creator of Rūrusetto
+
 If you use this API and want to share on your beautiful project that use this API, want to request on feature or worry on permission to use this API you can [send an email to me](mailto:me@helloyeew.dev) or just make an issues or discussion on [the repositories](https://github.com/Rurusetto/rurusetto)
+
+Don't hesitate to contact me if you have any questions or have any concern!
+
+- HelloYeew
 
 # Endpoints
 
