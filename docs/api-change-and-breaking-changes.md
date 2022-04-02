@@ -10,6 +10,10 @@
 - Make status available in listing API
 - Update PNG file format in static files API
 
+## April 2, 2022 (2022.402.0)
+
+- Add `parameter` to Rulesets API.
+
 # Breaking Changes
 
 No breaking change now ʕ•́ᴥ•̀ʔっ
