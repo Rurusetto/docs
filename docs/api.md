@@ -46,6 +46,7 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 | light_icon           | string      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
 | owner_detail         | user_detail | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
 | verified             | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
+| archive              | boolean     | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
 | direct_download_link | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
 | can_download         | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
 | status               | status      | The [status](#status) of the ruleset.                                                                                                                           |
@@ -70,6 +71,7 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
             "image": "/media/profile_pics/Very_not_so_pink_avatar_trnsprncy.png"
         },
         "verified": true,
+        "archive": false,
         "direct_download_link": "https://github.com/LumpBloom7/sentakki/releases/latest/download/osu.Game.Rulesets.Sentakki.dll",
         "can_download": true,
         "status": {
