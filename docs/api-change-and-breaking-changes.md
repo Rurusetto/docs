@@ -14,6 +14,10 @@
 
 - Add `archive` parameter to Rulesets API.
 
+## April 10, 2022 (2022.410.0)
+
+- Add recommend beatmaps to API
+
 # Breaking Changes
 
 No breaking change now ʕ•́ᴥ•̀ʔっ
