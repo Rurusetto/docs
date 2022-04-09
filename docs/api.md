@@ -248,32 +248,32 @@ About `beatmap_card` and `beatmap_list` we use in our beatmap card like this (We
 ```json
 [
     {
-        "user_detail": {
-            "id": 1,
-            "user": {
-                "username": "wangwangwang",
-                "email": "fsadkjlsafdjkljkl@wang.com"
-            },
-            "image": "/media/default.png"
-        },
-        "beatmap_id": 75,
-        "beatmapset_id": 1,
-        "title": "DISCO PRINCE",
-        "artist": "Kenji Ninuma",
-        "source": "",
-        "creator": "peppy",
-        "approved": "1",
-        "difficultyrating": 2.39774,
-        "bpm": "119.999",
-        "version": "Normal",
-        "url": "https://osu.ppy.sh/beatmapsets/1#osu/75",
-        "beatmap_cover": "/media/default_beatmap_cover.jpeg",
-        "beatmap_thumbnail": "/media/default_beatmap_thumbnail.jpeg",
-        "beatmap_card": "/media/default_beatmap_cover.jpeg",
-        "beatmap_list": "/media/default_beatmap_thumbnail.jpeg",
-        "comment": "wang",
-        "created_at": "2022-04-09T19:24:07.479467Z"
-    }, {...}, {...}
+    "user_detail": {
+      "id": 3,
+      "user": {
+        "username": "wang",
+        "email": "wang@wangwang.com"
+      },
+      "image": "/media/profile_pics/wang.png"
+    },
+    "beatmap_id": 2643263,
+    "beatmapset_id": 1272023,
+    "title": "LEMONS feat. kennedi",
+    "artist": "Shawn Wasabi",
+    "source": "",
+    "creator": "defiance",
+    "approved": "1",
+    "difficultyrating": 4.60116,
+    "bpm": "154",
+    "version": "lemonade",
+    "url": "https://osu.ppy.sh/beatmapsets/1272023#osu/2643263",
+    "beatmap_cover": "/media/beatmap_cover/2643263.jpg",
+    "beatmap_thumbnail": "/media/beatmap_thumbnail/2643263.jpg",
+    "beatmap_card": "/media/beatmap_card/2643263.jpg",
+    "beatmap_list": "/media/beatmap_list/2643263.jpg",
+    "comment": "Fun patterns all around",
+    "created_at": "2021-11-24T01:27:04.895823Z"
+    },, {...}, {...}
 ]
 ```
 
