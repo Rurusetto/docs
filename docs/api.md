@@ -235,13 +235,17 @@ We already make a filter for filter the list of recommend beatmaps by creator an
 | beatmap_card      | string      | URL of beatmap's card image that use in new osu! new beatmap card design.                                                  |
 | beatmap_list      | string      | URL of beatmap's list image that use in new osu! new beatmap card design.                                                  |
 | comment           | string      | Comment from user who recommend this beatmap.                                                                              |
-| created_at        | string      | The time on this recommend beatmap added to the site.                                                                      |
+| created_at        | string      | The time on this recommend beatmap added to the site in JSON time format.                                                  |
 
-About the format we use the name from [osu! API V1](https://github.com/ppy/osu-api/wiki#response) so you can read more in the [osu! API v1 docs](https://github.com/ppy/osu-api/wiki).
+### Note on response format
 
-About `beatmap_card` and `beatmap_list` we use in our beatmap card like this (We reference it from osu's new beatmap card design):
+- We use the name from [osu! API V1](https://github.com/ppy/osu-api/wiki#response) so you can read more in the [osu! API v1 docs](https://github.com/ppy/osu-api/wiki).
+
+- About `beatmap_card` and `beatmap_list` we use in our beatmap card like this (We reference it from osu's new beatmap card design):
 
 ![beatmap image location](img/beatmap_image_location.png)
+
+- We already cache all data to our server so all image link (`beatmap_cover`, `beatmap_thumbnail`, `beatmap_card`, `beatmap_list`) will use the same start endpoint like other files (https://rulesets.info/media/).
 
 ### Example response (200)
 
