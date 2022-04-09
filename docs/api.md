@@ -498,7 +498,7 @@ We also provide the API about the resource that use in the website. You can find
 
 ----------------------------------------------------------------------------------------------------
 
-Thanks for Netlify to sponsors us the open source plan!
+Thanks to Netlify for sponsors us the open source plan!
 
 <a href="https://www.netlify.com">
   <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />

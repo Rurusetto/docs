@@ -32,7 +32,7 @@ The endpoint of the resource is different from the other part. The endpoint is `
 
 ----------------------------------------------------------------------------------------------------
 
-Thanks for Netlify to sponsors us the open source plan!
+Thanks to Netlify for sponsors us the open source plan!
 
 <a href="https://www.netlify.com">
   <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
