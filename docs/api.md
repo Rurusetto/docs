@@ -191,6 +191,104 @@ Get the full details of a request ruleset.
 }
 ```
 
+## Recommend Beatmaps
+
+Get list of recommended beatmaps for target rulesets. Will return `[]` if no recommended beatmaps are found and will return 404 status if ruleset is not found.
+
+We already make a filter for filter the list of recommend beatmaps by creator and by other players. You can use each endpoint for each filter.
+
+- Return all recommended beatmaps for target rulesets.
+
+
+    GET https://rulesets.info/api/beatmaps/{ruleset-slug}
+
+
+- Return recommended beatmaps for target rulesets that's recommended by creator.
+
+
+    GET https://rulesets.info/api/beatmaps/{ruleset-slug}/creator
+
+
+- Return recommended beatmaps for target rulesets that's recommended by other players.
+
+
+    GET https://rulesets.info/api/beatmaps/{ruleset-slug}/players
+
+### Response format
+
+| Name              | Type        | Description                                                                                                                |
+|-------------------|-------------|----------------------------------------------------------------------------------------------------------------------------|
+| user_detail       | user_detail | [user_detail](#user_detail) of user who recommend this beatmap.                                                            |
+| beatmap_id        | int         | ID of this beatmap in osu!.                                                                                                |
+| beatmapset_id     | int         | ID of set of this beatmap in osu!.                                                                                         |
+| title             | string      | Beatmap's song name.                                                                                                       |
+| artist            | string      | Song's artist of this beatmap.                                                                                             |
+| source            | string      | Song's source of this beatmap.                                                                                             |
+| creator           | string      | Name of user in osu! who create this beatmap (mapper).                                                                     |
+| approved          | string      | Approval state of this beatmap (4 = loved, 3 = qualified, 2 = approved, 1 = ranked, 0 = pending, -1 = WIP, -2 = graveyard) |
+| difficultyrating  | float       | Star rating of this beatmap in osu! mode.                                                                                  |
+| bpm               | float       | BPM of the song in this beatmap.                                                                                           |
+| version           | string      | Difficulty name of this beatmap in beatmap's beatmapset.                                                                   |
+| url               | string      | URL to go to this beatmap in osu! website.                                                                                 |
+| beatmap_cover     | string      | URL of beatmap's cover image that use as the background in beatmap page.                                                   |
+| beatmap_thumbnail | string      | URL of beatmap's thumbnail image that use in old osu! site and in osu! stable.                                             |
+| beatmap_card      | string      | URL of beatmap's card image that use in new osu! new beatmap card design.                                                  |
+| beatmap_list      | string      | URL of beatmap's list image that use in new osu! new beatmap card design.                                                  |
+| comment           | string      | Comment from user who recommend this beatmap.                                                                              |
+| created_at        | string      | The time on this recommend beatmap added to the site in JSON time format.                                                  |
+
+### Note on response format
+
+- We use the name from [osu! API V1](https://github.com/ppy/osu-api/wiki#response) so you can read more in the [osu! API v1 docs](https://github.com/ppy/osu-api/wiki).
+
+- About `beatmap_card` and `beatmap_list` we use in our beatmap card like this (We reference it from osu's new beatmap card design):
+
+![beatmap image location](img/beatmap_image_location.png)
+
+- We already cache all data to our server so all image link (`beatmap_cover`, `beatmap_thumbnail`, `beatmap_card`, `beatmap_list`) will use the same start endpoint like other files (https://rulesets.info/media/).
+
+### Example response (200)
+
+```json
+[
+    {
+    "user_detail": {
+      "id": 3,
+      "user": {
+        "username": "wang",
+        "email": "wang@wangwang.com"
+      },
+      "image": "/media/profile_pics/wang.png"
+    },
+    "beatmap_id": 2643263,
+    "beatmapset_id": 1272023,
+    "title": "LEMONS feat. kennedi",
+    "artist": "Shawn Wasabi",
+    "source": "",
+    "creator": "defiance",
+    "approved": "1",
+    "difficultyrating": 4.60116,
+    "bpm": "154",
+    "version": "lemonade",
+    "url": "https://osu.ppy.sh/beatmapsets/1272023#osu/2643263",
+    "beatmap_cover": "/media/beatmap_cover/2643263.jpg",
+    "beatmap_thumbnail": "/media/beatmap_thumbnail/2643263.jpg",
+    "beatmap_card": "/media/beatmap_card/2643263.jpg",
+    "beatmap_list": "/media/beatmap_list/2643263.jpg",
+    "comment": "Fun patterns all around",
+    "created_at": "2021-11-24T01:27:04.895823Z"
+    },, {...}, {...}
+]
+```
+
+### Example response (404)
+
+```json
+{
+  "detail": "The ruleset is not found"
+}
+```
+
 # Subpage
 
 ## Ruleset Subpage
