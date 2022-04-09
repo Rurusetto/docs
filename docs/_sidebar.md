@@ -8,6 +8,7 @@
   - [Rulesets](api.md#rulesets)
     - [Listing](api.md#listing)
     - [Details](api.md#details)
+    - [Recommend Beatmaps](api.md#recommend-beatmaps)
   - [Subpage](api.md#subpage)
     - [Ruleset Subpage](api.md#ruleset-subpage)
     - [Subpage Detail](api.md#subpage-detail)
