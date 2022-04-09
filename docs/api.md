@@ -200,19 +200,19 @@ We already make a filter for filter the list of recommend beatmaps by creator an
 - Return all recommended beatmaps for target rulesets.
 
 
-    GET https://rulesets.info/api/beatmaps/{ruleset-slug}
+    GET https://rulesets.info/api/rulesets/{ruleset-slug}/beatmaps/
 
 
 - Return recommended beatmaps for target rulesets that's recommended by creator.
 
 
-    GET https://rulesets.info/api/beatmaps/{ruleset-slug}/creator
+    GET https://rulesets.info/api/rulesets/{ruleset-slug}/beatmaps/creator
 
 
 - Return recommended beatmaps for target rulesets that's recommended by other players.
 
 
-    GET https://rulesets.info/api/beatmaps/{ruleset-slug}/players
+    GET https://rulesets.info/api/rulesets/{ruleset-slug}/beatmaps/players
 
 ### Response format
 
