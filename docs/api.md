@@ -423,33 +423,77 @@ Get full detail on the profile page of the target user. Will return 404 if the u
 
 ### Response format
 
-| Name         | Type    | Description                                                                                           |
-|--------------|---------|-------------------------------------------------------------------------------------------------------|
-| id           | integer | The ID of the user. Use in URL path to target user's profile page.                                    |
-| user         |         |                                                                                                       |
-| - username   | string  | Username of request user.                                                                             |
-| - email      | string  | Email of request user. (Can be blank and if it's blank this field will be "", not null)               |
-| image        | string  | URL of the user's profile picture.                                                                    |
-| cover        | string  | URL of the user's cover picture in website's default theme (Dark theme).                              |
-| cover_light  | string  | URL of the user's cover picture in website's light theme.                                             |
-| about_me     | string  | User's introduction text on profile page.                                                             |
-| osu_username | string  | osu! account username of target user (Can be blank and if it's blank this field will be "", not null) |
+| Name             | Type    | Description                                                                                              |
+|------------------|---------|----------------------------------------------------------------------------------------------------------|
+| id               | integer | The ID of the user. Use in URL path to target user's profile page.                                       |
+| user             |         |                                                                                                          |
+| - username       | string  | Username of request user.                                                                                |
+| - email          | string  | Email of request user. (Can be blank and if it's blank this field will be "", not null)                  |
+| tags             | tag     | List of [tag](#tag) that user has. Will be `[]` if no tags found in this user.                           |
+| image            | string  | URL of the user's profile picture.                                                                       |
+| cover            | string  | URL of the user's cover picture in website's default theme (Dark theme).                                 |
+| cover_light      | string  | URL of the user's cover picture in website's light theme.                                                |
+| about_me         | string  | User's introduction text on profile page.                                                                |
+| osu_username     | string  | osu! account username of target user (Can be blank and if it's blank this field will be "", not null)    |
+| created_rulesets | ruleset | List of [ruleset](#ruleset) that user created. Will be `[]` if no created rulesets found from this user. |
 
 
 ### Example response (200)
 
 ```json
 {
-  "id": 1,
+  "id": 3,
   "user": {
-    "username": "HelloYeew",
-    "email": "me@helloyeew.dev"
+    "username": "nao",
+    "email": "altenyt@gmail.com"
   },
-  "image": "/media/profile_pics/1612258077.jpeg",
-  "cover": "/media/cover_pics/finale.png",
-  "cover_light": "/media/cover_pics_light/785636.png",
-  "about_me": "Hello there!",
-  "osu_username": "HelloYeew"
+  "tags": [
+    {
+      "name": "Beta Tester",
+      "pills_color": "#FF66AA",
+      "font_color": "#FFFFFF",
+      "description": "User who get this tag are registered when this website is in beta phase."
+    },
+    {
+      "name": "Rulesets Creator",
+      "pills_color": "#FF66AA",
+      "font_color": "#FFFFFF",
+      "description": "User who created and owned the ruleset"
+    },
+    {
+      "name": "Wiki Maintainer",
+      "pills_color": "#FF66AA",
+      "font_color": "#FFFFFF",
+      "description": "User who maintain the wiki and administration this website."
+    }
+  ],
+  "image": "/media/profile_pics/XEIHLD5lsJ.png",
+  "cover": "/media/cover_pics/FBU1DXRVEAQNgmv.png",
+  "cover_light": "/media/cover_pics_light/FBU1DXRVEAQNgmv.png",
+  "about_me": "Hi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+  "osu_username": "Laicah",
+  "created_rulesets": [
+    {
+      "id": 3,
+      "name": "Tau",
+      "slug": "tau",
+      "description": "Sweeping beats with your scythe.",
+      "icon": "/media/rulesets_icon/Icon.png",
+      "light_icon": "/media/rulesets_icon_light/Icon_Light.png",
+      "verified": true,
+      "archive": false,
+      "direct_download_link": "https://github.com/taulazer/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll",
+      "can_download": true,
+      "status": {
+        "latest_version": "2022.409.0",
+        "latest_update": "2022-04-09T18:35:01Z",
+        "pre_release": false,
+        "changelog": "## What's Changed\r\n* Update osu! from 2022.405.0 to 2022.409.0 by @naoei in https://github.com/taulazer/tau/commit/e549552e3ca22b5c80d2280f0b74fb04ed88dd7e\r\n\r\n\r\n**Full Changelog**: https://github.com/taulazer/tau/compare/2022.406.0...2022.409.0\r\n\r\n# Installation:\r\nTo install this ruleset just simply put this .DLL file onto your `osu/Rulesets` directory under `%appdata%`/.\r\nosu!lazer will do the rest for you.",
+        "file_size": 424448,
+        "playable": "yes"
+      }
+    }
+  ]
 }
 ```
 
@@ -491,6 +535,40 @@ Use in some element that required to show the status of the ruleset.
 | changelog      | string  | The latest changelog of the ruleset in markdown format.                                          |
 | file_size      | int     | The size of the latest release file in bytes.                                                    |
 | playable       | string  | The status about the playable of the ruleset. Has 3 choices (yes, no, unknown)                   |
+
+## ruleset
+
+Use in some element that required all rough ruleset detail but don't want user detail included. All field is same as in ruleset listing but it
+cut some user related detail.
+
+### Response format
+
+| Name                 | Type        | Description                                                                                                                                                     |
+|----------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                   | integer     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
+| name                 | string      | The name of the ruleset.                                                                                                                                        |
+| slug                 | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
+| description          | string      | The short description of the rulesets.                                                                                                                          |
+| icon                 | string      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
+| light_icon           | string      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
+| verified             | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
+| archive              | boolean     | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
+| direct_download_link | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| can_download         | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
+| status               | status      | The [status](#status) of the ruleset.                                                                                                                           |
+
+## tag
+
+Represent the tag object in the database that's normally bind with the user profile.
+
+### Response format
+
+| Name        | Type   | Description                                                                                          |
+|-------------|--------|------------------------------------------------------------------------------------------------------|
+| name        | string | The name of the tag.                                                                                 |
+| pills_color | string | The background color of the tag pills that show in profile. Will return in hex color (e.g. #FFFFFF). |
+| font_color  | string | The font color of the tag pills that show in profile. Will return in hex color (e.g. #FFFFFF).       |
+| description | string | The description of the tag.                                                                          |
 
 # Website resource
 

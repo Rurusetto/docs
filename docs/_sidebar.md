@@ -17,6 +17,8 @@
   - [Object Structure](api.md#object-structure)
     - [user_detail](api.md#user_detail)
     - [status](api.md#status)
+    - [ruleset](api.md#ruleset)
+    - [tag](api.md#tag)
   - [Website Resource](website-resource.md)
     - [Endpoints](website-resource.md#endpoints)
     - [Logo](website-resource.md#logo)
