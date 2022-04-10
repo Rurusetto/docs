@@ -442,48 +442,54 @@ Get full detail on the profile page of the target user. Will return 404 if the u
 
 ```json
 {
-  "id": 1,
+  "id": 3,
   "user": {
-    "username": "wangwangwang",
-    "email": "wangy@wang.com"
+    "username": "nao",
+    "email": "altenyt@gmail.com"
   },
   "tags": [
     {
-      "name": "wang",
+      "name": "Beta Tester",
       "pills_color": "#FF66AA",
       "font_color": "#FFFFFF",
-      "description": "this is wang tag"
+      "description": "User who get this tag are registered when this website is in beta phase."
     },
     {
-      "name": "more wang",
+      "name": "Rulesets Creator",
       "pills_color": "#FF66AA",
       "font_color": "#FFFFFF",
-      "description": "pink wang"
+      "description": "User who created and owned the ruleset"
+    },
+    {
+      "name": "Wiki Maintainer",
+      "pills_color": "#FF66AA",
+      "font_color": "#FFFFFF",
+      "description": "User who maintain the wiki and administration this website."
     }
   ],
-  "image": "/media/default.png",
-  "cover": "/media/default_cover.png",
-  "cover_light": "/media/default_cover.png",
-  "about_me": "Hello there!",
-  "osu_username": "",
+  "image": "/media/profile_pics/XEIHLD5lsJ.png",
+  "cover": "/media/cover_pics/FBU1DXRVEAQNgmv.png",
+  "cover_light": "/media/cover_pics_light/FBU1DXRVEAQNgmv.png",
+  "about_me": "Hi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+  "osu_username": "Laicah",
   "created_rulesets": [
     {
-      "id": 1,
-      "name": "peppy and his wang",
-      "slug": "peppy-and-his-wang",
-      "description": "wangwangwang",
-      "icon": "/media/rulesets_icon/peppy.jpg",
-      "light_icon": "/media/rulesets_icon_light/peppy.jpg",
+      "id": 3,
+      "name": "Tau",
+      "slug": "tau",
+      "description": "Sweeping beats with your scythe.",
+      "icon": "/media/rulesets_icon/Icon.png",
+      "light_icon": "/media/rulesets_icon_light/Icon_Light.png",
       "verified": true,
       "archive": false,
-      "direct_download_link": "https://peppy.wang",
+      "direct_download_link": "https://github.com/taulazer/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll",
       "can_download": true,
       "status": {
-        "latest_version": "2022.410.0",
-        "latest_update": "2022-04-10T20:07:25Z",
+        "latest_version": "2022.409.0",
+        "latest_update": "2022-04-09T18:35:01Z",
         "pre_release": false,
-        "changelog": "This is new wang update!",
-        "file_size": 696969,
+        "changelog": "## What's Changed\r\n* Update osu! from 2022.405.0 to 2022.409.0 by @naoei in https://github.com/taulazer/tau/commit/e549552e3ca22b5c80d2280f0b74fb04ed88dd7e\r\n\r\n\r\n**Full Changelog**: https://github.com/taulazer/tau/compare/2022.406.0...2022.409.0\r\n\r\n# Installation:\r\nTo install this ruleset just simply put this .DLL file onto your `osu/Rulesets` directory under `%appdata%`/.\r\nosu!lazer will do the rest for you.",
+        "file_size": 424448,
         "playable": "yes"
       }
     }
