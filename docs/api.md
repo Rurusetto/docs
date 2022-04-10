@@ -532,7 +532,7 @@ Use in some element that required to show the status of the ruleset.
 
 ## ruleset
 
-Use in some element that required all ruleset detail but don't want user detail included. All field is same as in ruleset listing but it
+Use in some element that required all rough ruleset detail but don't want user detail included. All field is same as in ruleset listing but it
 cut some user related detail.
 
 ### Response format
