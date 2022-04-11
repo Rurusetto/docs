@@ -3,7 +3,7 @@
   - [Changelog and Breaking Changes](api-change-and-breaking-changes.md)
   - [Endpoints](api.md#endpoints)
     - [Base URL](api.md#base-url)
-    - [Files](api.md#files)
+  - [Type Notations](api.md#type-notations)
   - [Timezones](api.md#timezones)
   - [Rulesets](api.md#rulesets)
     - [Listing](api.md#listing)

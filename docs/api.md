@@ -20,7 +20,7 @@ Current limit rate is set at an insane rate of 1200 requests per minutes. If you
 
 The base URL of the API is `https://rulesets.info/api/`.
 
-# Type notation
+# Type Notations
 
 1. `type?` means the value can be `null` or `undefined`. A lack of the `?` means it will never be `null` or `undefined`.
 2. `type | value` (for example `string | ""`) indicates that the field is allowed to have a blank value such as the RHS of the pipe. A lack of the `| value` means the field will always have meaningful data which is not blank.
