@@ -24,6 +24,15 @@ The base URL of the API is `https://rulesets.info/api/`.
 
 All file that's available in the API must start with `https://rulesets.info/media/`.
 
+# Type notation
+
+1. `type?` means the value can be `null` or `undefined`. A lack of the `?` means it will never be `null` or `undefined`.
+2. `type | value` (for example `string | ""`) indicates that the field is allowed to have a blank value such as the RHS of the pipe. A lack of the `| value` means the field will always have meaningful data which is not blank.
+3. `type[]` means that the field is a list/array of `type`. The `| value` notation does not apply to this - lists are allowed to be empty (`[]`) by default.
+4. The type `Datetime` is a JSON date string in UTC.
+5. The type `URL` is a string. It it's not start with `http://` or `https://`, it must start with `https://rulesets.info/`.
+6. The type `Markdown` is a string in a markdown format.
+
 # Timezones
 
 All dates and times are in UTC.
