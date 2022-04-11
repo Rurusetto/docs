@@ -20,10 +20,6 @@ Current limit rate is set at an insane rate of 1200 requests per minutes. If you
 
 The base URL of the API is `https://rulesets.info/api/`.
 
-## Files
-
-All file that's available in the API must start with `https://rulesets.info/media/`.
-
 # Type notation
 
 1. `type?` means the value can be `null` or `undefined`. A lack of the `?` means it will never be `null` or `undefined`.
