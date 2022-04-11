@@ -38,20 +38,20 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 
 ### Response format
 
-| Name                 | Type        | Description                                                                                                                                                     |
-|----------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                   | integer     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
-| name                 | string      | The name of the ruleset.                                                                                                                                        |
-| slug                 | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
-| description          | string      | The short description of the rulesets.                                                                                                                          |
-| icon                 | string      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
-| light_icon           | string      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
-| owner_detail         | user_detail | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
-| verified             | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
-| archive              | boolean     | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
-| direct_download_link | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
-| can_download         | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
-| status               | status      | The [status](#status) of the ruleset.                                                                                                                           |
+| Name                 | Type                        | Description                                                                                                                                                     |
+|----------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                   | integer                     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
+| name                 | string                      | The name of the ruleset.                                                                                                                                        |
+| slug                 | string                      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
+| description          | string                      | The short description of the rulesets.                                                                                                                          |
+| icon                 | string                      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
+| light_icon           | string                      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
+| owner_detail         | [user_detail](#user_detail) | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
+| verified             | boolean                     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
+| archive              | boolean                     | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
+| direct_download_link | string                      | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| can_download         | boolean                     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
+| status               | [status](#status)           | The [status](#status) of the ruleset.                                                                                                                           |
 
 ### Example response (200)
 
@@ -96,32 +96,32 @@ Get the full details of a request ruleset.
 
 ### Response format
 
-| Name                     | Type        | Description                                                                                                                                                     |
-|--------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                       | integer     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
-| name                     | string      | The name of the ruleset.                                                                                                                                        |
-| slug                     | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
-| description              | string      | The short description of the rulesets.                                                                                                                          |
-| icon                     | string      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
-| light_icon               | string      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
-| logo                     | string      | The URL of the ruleset logo that use in the infobox.                                                                                                            |
-| cover_image              | string      | The URL of the cover image in ruleset's wiki page in website's default theme (dark theme).                                                                      |
-| cover_image_light        | string      | The URL of the cover image in ruleset's wiki page in website's light theme.                                                                                     |
-| opengraph_image          | string      | The URL of the image that use in the opengraph part of the wiki URL.                                                                                            |
-| custom_css               | string      | The URL of the CSS file that's override the website's default styling.                                                                                          |
-| content                  | string      | Wiki main content in markdown format.                                                                                                                           |
-| source                   | string      | The URL source of the rulesets.                                                                                                                                 |
-| github_download_filename | string      | Filename that use in rendering the direct download link with the source link.                                                                                   |
-| direct_download_link     | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
-| can_download             | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
-| creator_detail           | user_detail | The [user_detail](#user_detail) of the user who create this wiki page, not the owner.                                                                           |
-| created_at               | string      | The UTC time that the wiki page has create in JSON time format.                                                                                                 |
-| owner_detail             | user_detail | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
-| last_edited_at           | string      | The UTC time of the latest wiki edit.                                                                                                                           |
-| last_edited_by_detail    | user_detail | The [user_detail](#user_detail) of the user who edit the wiki page last time.                                                                                   |
-| verified                 | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
-| archive                  | boolean     | True if this ruleset is stop update or archived by rulesets creator.                                                                                            |
-| status                   | status      | The [status](#status) of the ruleset.                                                                                                                           |
+| Name                     | Type                        | Description                                                                                                                                                     |
+|--------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                       | integer                     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
+| name                     | string                      | The name of the ruleset.                                                                                                                                        |
+| slug                     | string                      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
+| description              | string                      | The short description of the rulesets.                                                                                                                          |
+| icon                     | string                      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
+| light_icon               | string                      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
+| logo                     | string                      | The URL of the ruleset logo that use in the infobox.                                                                                                            |
+| cover_image              | string                      | The URL of the cover image in ruleset's wiki page in website's default theme (dark theme).                                                                      |
+| cover_image_light        | string                      | The URL of the cover image in ruleset's wiki page in website's light theme.                                                                                     |
+| opengraph_image          | string                      | The URL of the image that use in the opengraph part of the wiki URL.                                                                                            |
+| custom_css               | string                      | The URL of the CSS file that's override the website's default styling.                                                                                          |
+| content                  | string                      | Wiki main content in markdown format.                                                                                                                           |
+| source                   | string                      | The URL source of the rulesets.                                                                                                                                 |
+| github_download_filename | string                      | Filename that use in rendering the direct download link with the source link.                                                                                   |
+| direct_download_link     | string                      | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| can_download             | boolean                     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
+| creator_detail           | [user_detail](#user_detail) | The [user_detail](#user_detail) of the user who create this wiki page, not the owner.                                                                           |
+| created_at               | string                      | The UTC time that the wiki page has create in JSON time format.                                                                                                 |
+| owner_detail             | [user_detail](#user_detail) | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
+| last_edited_at           | string                      | The UTC time of the latest wiki edit.                                                                                                                           |
+| last_edited_by_detail    | [user_detail](#user_detail) | The [user_detail](#user_detail) of the user who edit the wiki page last time.                                                                                   |
+| verified                 | boolean                     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
+| archive                  | boolean                     | True if this ruleset is stop update or archived by rulesets creator.                                                                                            |
+| status                   | [status](#status)           | The [status](#status) of the ruleset.                                                                                                                           |
 
 
 ### Example response (200)
@@ -216,26 +216,26 @@ We already make a filter for filter the list of recommend beatmaps by creator an
 
 ### Response format
 
-| Name              | Type        | Description                                                                                                                |
-|-------------------|-------------|----------------------------------------------------------------------------------------------------------------------------|
-| user_detail       | user_detail | [user_detail](#user_detail) of user who recommend this beatmap.                                                            |
-| beatmap_id        | int         | ID of this beatmap in osu!.                                                                                                |
-| beatmapset_id     | int         | ID of set of this beatmap in osu!.                                                                                         |
-| title             | string      | Beatmap's song name.                                                                                                       |
-| artist            | string      | Song's artist of this beatmap.                                                                                             |
-| source            | string      | Song's source of this beatmap.                                                                                             |
-| creator           | string      | Name of user in osu! who create this beatmap (mapper).                                                                     |
-| approved          | string      | Approval state of this beatmap (4 = loved, 3 = qualified, 2 = approved, 1 = ranked, 0 = pending, -1 = WIP, -2 = graveyard) |
-| difficultyrating  | float       | Star rating of this beatmap in osu! mode.                                                                                  |
-| bpm               | float       | BPM of the song in this beatmap.                                                                                           |
-| version           | string      | Difficulty name of this beatmap in beatmap's beatmapset.                                                                   |
-| url               | string      | URL to go to this beatmap in osu! website.                                                                                 |
-| beatmap_cover     | string      | URL of beatmap's cover image that use as the background in beatmap page.                                                   |
-| beatmap_thumbnail | string      | URL of beatmap's thumbnail image that use in old osu! site and in osu! stable.                                             |
-| beatmap_card      | string      | URL of beatmap's card image that use in new osu! new beatmap card design.                                                  |
-| beatmap_list      | string      | URL of beatmap's list image that use in new osu! new beatmap card design.                                                  |
-| comment           | string      | Comment from user who recommend this beatmap.                                                                              |
-| created_at        | string      | The time on this recommend beatmap added to the site in JSON time format.                                                  |
+| Name              | Type                        | Description                                                                                                                |
+|-------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| user_detail       | [user_detail](#user_detail) | [user_detail](#user_detail) of user who recommend this beatmap.                                                            |
+| beatmap_id        | int                         | ID of this beatmap in osu!.                                                                                                |
+| beatmapset_id     | int                         | ID of set of this beatmap in osu!.                                                                                         |
+| title             | string                      | Beatmap's song name.                                                                                                       |
+| artist            | string                      | Song's artist of this beatmap.                                                                                             |
+| source            | string                      | Song's source of this beatmap.                                                                                             |
+| creator           | string                      | Name of user in osu! who create this beatmap (mapper).                                                                     |
+| approved          | string                      | Approval state of this beatmap (4 = loved, 3 = qualified, 2 = approved, 1 = ranked, 0 = pending, -1 = WIP, -2 = graveyard) |
+| difficultyrating  | float                       | Star rating of this beatmap in osu! mode.                                                                                  |
+| bpm               | float                       | BPM of the song in this beatmap.                                                                                           |
+| version           | string                      | Difficulty name of this beatmap in beatmap's beatmapset.                                                                   |
+| url               | string                      | URL to go to this beatmap in osu! website.                                                                                 |
+| beatmap_cover     | string                      | URL of beatmap's cover image that use as the background in beatmap page.                                                   |
+| beatmap_thumbnail | string                      | URL of beatmap's thumbnail image that use in old osu! site and in osu! stable.                                             |
+| beatmap_card      | string                      | URL of beatmap's card image that use in new osu! new beatmap card design.                                                  |
+| beatmap_list      | string                      | URL of beatmap's list image that use in new osu! new beatmap card design.                                                  |
+| comment           | string                      | Comment from user who recommend this beatmap.                                                                              |
+| created_at        | string                      | The time on this recommend beatmap added to the site in JSON time format.                                                  |
 
 ### Note on response format
 
@@ -331,16 +331,16 @@ Get full detail of targeted subpage. Will return 404 status if subpage or rulese
 
 ### Response format
 
-| Name                  | Type        | Description                                                       |
-|-----------------------|-------------|-------------------------------------------------------------------|
-| ruleset_detail        | Details     | [Details](#details) of ruleset.                                   |
-| title                 | string      | Title of the subpage                                              |
-| slug                  | string      | Slug of the subpage. Use in subpage URL path.                     |
-| content               | string      | Content of the subpage in markdown format.                        |
-| creator_detail        | user_detail | [user_detail](#user_detail) of user who create this page.         |
-| last_edited_by_detail | user_detail | [user_detail](#user_detail) of user who last edited this subpage. |
-| last_edited_at        | string      | The UTC time of the latest wiki edit in JSON time format.         |
-| created_at            | string      | The UTC time that the wiki page has create in JSON time format.   |
+| Name                  | Type                        | Description                                                       |
+|-----------------------|-----------------------------|-------------------------------------------------------------------|
+| ruleset_detail        | [Details](#details)         | [Details](#details) of ruleset.                                   |
+| title                 | string                      | Title of the subpage                                              |
+| slug                  | string                      | Slug of the subpage. Use in subpage URL path.                     |
+| content               | string                      | Content of the subpage in markdown format.                        |
+| creator_detail        | [user_detail](#user_detail) | [user_detail](#user_detail) of user who create this page.         |
+| last_edited_by_detail | [user_detail](#user_detail) | [user_detail](#user_detail) of user who last edited this subpage. |
+| last_edited_at        | string                      | The UTC time of the latest wiki edit in JSON time format.         |
+| created_at            | string                      | The UTC time that the wiki page has create in JSON time format.   |
 
 ### Example response (200)
 
@@ -423,19 +423,19 @@ Get full detail on the profile page of the target user. Will return 404 if the u
 
 ### Response format
 
-| Name             | Type    | Description                                                                                              |
-|------------------|---------|----------------------------------------------------------------------------------------------------------|
-| id               | integer | The ID of the user. Use in URL path to target user's profile page.                                       |
-| user             |         |                                                                                                          |
-| - username       | string  | Username of request user.                                                                                |
-| - email          | string  | Email of request user. (Can be blank and if it's blank this field will be "", not null)                  |
-| tags             | tag     | List of [tag](#tag) that user has. Will be `[]` if no tags found in this user.                           |
-| image            | string  | URL of the user's profile picture.                                                                       |
-| cover            | string  | URL of the user's cover picture in website's default theme (Dark theme).                                 |
-| cover_light      | string  | URL of the user's cover picture in website's light theme.                                                |
-| about_me         | string  | User's introduction text on profile page.                                                                |
-| osu_username     | string  | osu! account username of target user (Can be blank and if it's blank this field will be "", not null)    |
-| created_rulesets | ruleset | List of [ruleset](#ruleset) that user created. Will be `[]` if no created rulesets found from this user. |
+| Name             | Type                | Description                                                                                              |
+|------------------|---------------------|----------------------------------------------------------------------------------------------------------|
+| id               | integer             | The ID of the user. Use in URL path to target user's profile page.                                       |
+| user             |                     |                                                                                                          |
+| - username       | string              | Username of request user.                                                                                |
+| - email          | string              | Email of request user. (Can be blank and if it's blank this field will be "", not null)                  |
+| tags             | [tag](#tag)         | List of [tag](#tag) that user has. Will be `[]` if no tags found in this user.                           |
+| image            | string              | URL of the user's profile picture.                                                                       |
+| cover            | string              | URL of the user's cover picture in website's default theme (Dark theme).                                 |
+| cover_light      | string              | URL of the user's cover picture in website's light theme.                                                |
+| about_me         | string              | User's introduction text on profile page.                                                                |
+| osu_username     | string              | osu! account username of target user (Can be blank and if it's blank this field will be "", not null)    |
+| created_rulesets | [ruleset](#ruleset) | List of [ruleset](#ruleset) that user created. Will be `[]` if no created rulesets found from this user. |
 
 
 ### Example response (200)
@@ -543,19 +543,19 @@ cut some user related detail.
 
 ### Response format
 
-| Name                 | Type        | Description                                                                                                                                                     |
-|----------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                   | integer     | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
-| name                 | string      | The name of the ruleset.                                                                                                                                        |
-| slug                 | string      | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
-| description          | string      | The short description of the rulesets.                                                                                                                          |
-| icon                 | string      | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
-| light_icon           | string      | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
-| verified             | boolean     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
-| archive              | boolean     | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
-| direct_download_link | string      | URL for download the latest release of ruleset from GitHub                                                                                                      |
-| can_download         | boolean     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
-| status               | status      | The [status](#status) of the ruleset.                                                                                                                           |
+| Name                 | Type              | Description                                                                                                                                                     |
+|----------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                   | integer           | The ID of the ruleset in Rūrusetto database.                                                                                                                    |
+| name                 | string            | The name of the ruleset.                                                                                                                                        |
+| slug                 | string            | The slug of the ruleset. Use in the URL of the ruleset's wiki page.                                                                                             |
+| description          | string            | The short description of the rulesets.                                                                                                                          |
+| icon                 | string            | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
+| light_icon           | string            | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
+| verified             | boolean           | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
+| archive              | boolean           | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
+| direct_download_link | string            | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| can_download         | boolean           | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
+| status               | [status](#status) | The [status](#status) of the ruleset.                                                                                                                           |
 
 ## tag
 
