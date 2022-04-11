@@ -530,7 +530,7 @@ Use in some element that required to show the status of the ruleset.
 | Name           | Type    | Description                                                                                      |
 |----------------|---------|--------------------------------------------------------------------------------------------------|
 | latest_version | string  | The latest version name of the ruleset.                                                          |
-| latest_update  | string  | The time on ruleset's latest update in JSON time format. If it's blank it will return as `null`. |
+| latest_update  | string? | The time on ruleset's latest update in JSON time format. If it's blank it will return as `null`. |
 | pre_release    | boolean | True if the ruleset is marked as pre-release in GitHub Release.                                  |
 | changelog      | string  | The latest changelog of the ruleset in markdown format.                                          |
 | file_size      | int     | The size of the latest release file in bytes.                                                    |
