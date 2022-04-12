@@ -26,7 +26,7 @@ The base URL of the API is `https://rulesets.info/api/`.
 2. `type | value` (for example `string | ""`) indicates that the field is allowed to have a blank value such as the RHS of the pipe. A lack of the `| value` means the field will always have meaningful data which is not blank.
 3. `type[]` means that the field is a list/array of `type`. The `| value` notation does not apply to this - lists are allowed to be empty (`[]`) by default.
 4. The type `Datetime` is a JSON date string in UTC.
-5. The type `URL` is a string. It it's not start with `http://` or `https://`, it must start with `https://rulesets.info/`.
+5. The type `URL` is a string. If it's not an absolute address, its relative to `https://rulesets.info/`.
 6. The type `Markdown` is a string in a markdown format.
 
 # Timezones
@@ -51,10 +51,10 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 | description          | string                      | The short description of the rulesets.                                                                                                                          |
 | icon                 | URL                         | The URL of the ruleset icon that use in website's default theme (dark theme).                                                                                   |
 | light_icon           | URL                         | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
-| owner_detail         | [user_detail](#user_detail) | The [user_detail](#user_detail) of the ruleset's current owner                                                                                                  |
+| owner_detail         | [user_detail](#user_detail) | The [user_detail](#user_detail) of the ruleset's current owner.                                                                                                 |
 | verified             | boolean                     | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
 | archive              | boolean                     | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
-| direct_download_link | URL                         | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| direct_download_link | URL &#124; ""               | URL for download the latest release of ruleset from GitHub. If the ruleset source is unknown, provate or from Patreon the value will be `""`, not `null`.       |
 | can_download         | boolean                     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
 | status               | [status](#status)           | The [status](#status) of the ruleset.                                                                                                                           |
 
@@ -117,7 +117,7 @@ Get the full details of a request ruleset.
 | content                  | Markdown                    | Wiki main content in markdown format.                                                                                                                           |
 | source                   | URL                         | The URL source of the rulesets.                                                                                                                                 |
 | github_download_filename | string                      | Filename that use in rendering the direct download link with the source link.                                                                                   |
-| direct_download_link     | URL                         | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| direct_download_link     | URL &#124; ""               | URL for download the latest release of ruleset from GitHub. If the ruleset source is unknown, provate or from Patreon the value will be `""`, not `null`.       |
 | can_download             | boolean                     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
 | creator_detail           | [user_detail](#user_detail) | The [user_detail](#user_detail) of the user who create this wiki page, not the owner.                                                                           |
 | created_at               | Datetime                    | The UTC time that the wiki page has create in JSON time format.                                                                                                 |
@@ -558,7 +558,7 @@ cut some user related detail.
 | light_icon           | URL               | The URL of the ruleset icon that use in website's light theme.                                                                                                  |
 | verified             | boolean           | True if the wiki maintainer has verified that the the owner is the real owner of this ruleset.                                                                  |
 | archive              | boolean           | True if the rulesets is stop update or archived by rulesets creator.                                                                                            |
-| direct_download_link | URL               | URL for download the latest release of ruleset from GitHub                                                                                                      |
+| direct_download_link | URL &#124; ""     | URL for download the latest release of ruleset from GitHub. If the ruleset source is unknown, provate or from Patreon the value will be `""`, not `null`.       |
 | can_download         | boolean           | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
 | status               | [status](#status) | The [status](#status) of the ruleset.                                                                                                                           |
 
