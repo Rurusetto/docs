@@ -116,7 +116,7 @@ Get the full details of a request ruleset.
 | custom_css               | URL                         | The URL of the CSS file that's override the website's default styling.                                                                                          |
 | content                  | Markdown                    | Wiki main content in markdown format.                                                                                                                           |
 | source                   | URL                         | The URL source of the rulesets.                                                                                                                                 |
-| github_download_filename | string                      | Filename that use in rendering the direct download link with the source link.                                                                                   |
+| github_download_filename | string &#124; ""            | Filename that use in rendering the direct download link with the GitHub source link. Will be `""` if the ruleset source is not GitHub.                          |
 | direct_download_link     | URL &#124; ""               | URL for download the latest release of ruleset from GitHub. If the ruleset source is unknown, provate or from Patreon the value will be `""`, not `null`.       |
 | can_download             | boolean                     | True if website can render the direct download link from the `source` and `github_download_filename` so user can download directly from `direct_download_link`. |
 | creator_detail           | [user_detail](#user_detail) | The [user_detail](#user_detail) of the user who create this wiki page, not the owner.                                                                           |
@@ -434,7 +434,7 @@ Get full detail on the profile page of the target user. Will return 404 if the u
 | user             |                                 |                                                                                                          |
 | ----- username   | string                          | Username of request user.                                                                                |
 | ----- email      | string &#124; ""                | Email of request user. (Can be blank and if it's blank this field will be "", not null)                  |
-| tags             | [tag](#tag)[] &#124; []         | List of [tag](#tag) that user has. Will be `[]` if no tags found in this user.                           |
+| tags             | [tag](#tag)[]                   | List of [tag](#tag) that user has. Will be `[]` if no tags found in this user.                           |
 | image            | URL                             | URL of the user's profile picture.                                                                       |
 | cover            | URL                             | URL of the user's cover picture in website's default theme (Dark theme).                                 |
 | cover_light      | URL                             | URL of the user's cover picture in website's light theme.                                                |
@@ -532,14 +532,14 @@ Use in some element that required to show the status of the ruleset.
 
 ### Response format
 
-| Name           | Type      | Description                                                                                      |
-|----------------|-----------|--------------------------------------------------------------------------------------------------|
-| latest_version | string    | The latest version name of the ruleset.                                                          |
-| latest_update  | Datetime? | The time on ruleset's latest update in JSON time format. If it's blank it will return as `null`. |
-| pre_release    | boolean   | True if the ruleset is marked as pre-release in GitHub Release.                                  |
-| changelog      | Markdown  | The latest changelog of the ruleset in markdown format.                                          |
-| file_size      | int       | The size of the latest release file in bytes.                                                    |
-| playable       | string    | The status about the playable of the ruleset. Has 3 choices (yes, no, unknown)                   |
+| Name           | Type               | Description                                                                                      |
+|----------------|--------------------|--------------------------------------------------------------------------------------------------|
+| latest_version | string &#124; ""   | The latest version name of the ruleset.                                                          |
+| latest_update  | Datetime?          | The time on ruleset's latest update in JSON time format. If it's blank it will return as `null`. |
+| pre_release    | boolean            | True if the ruleset is marked as pre-release in GitHub Release.                                  |
+| changelog      | Markdown &#124; "" | The latest changelog of the ruleset in markdown format.                                          |
+| file_size      | int                | The size of the latest release file in bytes.                                                    |
+| playable       | string             | The status about the playable of the ruleset. Has 3 choices (yes, no, unknown)                   |
 
 ## ruleset
 
