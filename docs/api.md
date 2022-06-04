@@ -96,7 +96,7 @@ Get the list of all rulesets that's use in rendering the [listing](https://rules
 
 ## Details
 
-Get the full details of a request ruleset.
+Get the full details of a requested ruleset.
 
     GET https://rulesets.info/api/rulesets/{ruleset-slug}
 
